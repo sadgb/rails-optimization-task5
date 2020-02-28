@@ -3,14 +3,10 @@ class StoriesController < ApplicationController
   before_action :set_cache_control_headers, only: %i[index search show]
 
   def index
-    push_headers = [
-        "<#{view_context.asset_path('bell.svg')}>; rel=preload; as=image",
-        "<#{view_context.asset_path('menu.svg')}>; rel=preload; as=image",
-        "<#{view_context.asset_path('connect.svg')}>; rel=preload; as=image",
-        "<#{view_context.asset_path('stack.svg')}>; rel=preload; as=image",
-        "<#{view_context.asset_path('lightning.svg')}>; rel=preload; as=image",
-    ]
-    response.headers['Link'] = push_headers.join(', ')
+
+
+    request.env['rack.early_hints'].call({ 'link' => "<#{view_context.asset_path('bell.svg')}>;rel=preload"})
+
 
 
     add_param_context(:username, :tag)

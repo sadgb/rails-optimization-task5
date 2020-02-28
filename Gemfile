@@ -67,6 +67,7 @@ gem "omniauth-twitter", "~> 1.4"
 gem "pg", "~> 1.1"
 gem "pry", "~> 0.12"
 gem "pry-rails", "~> 0.3"
+gem 'falcon'
 gem "puma", "~> 3.12"
 gem "pundit", "~> 2.0"
 gem "pusher", "~> 1.3"

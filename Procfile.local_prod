@@ -1,2 +1,2 @@
-web: LOCAL_PRODUCTION=true bin/rails s -p 3000 -e production
+web: LOCAL_PRODUCTION=true  falcon serve --port 3000 -e production
 job: bin/rake jobs:work
